@@ -53,13 +53,15 @@ namespace Venier.PeopleList.QueueManager
                             // Create a file to write to.
                             using (StreamWriter sw = File.CreateText(pathFile))
                             {
-                                sw.WriteLine(queueMessage.AsString);
+                                sw.WriteLine("{0}: Name: {1}, Surname: {2}, Birth date: {3}, Address: {4};", DateTime.Now,
+                                            user.name, user.surname, user.birthDate.ToShortDateString(), user.address);
                             }
                         }
                         // Append to file
                         using (StreamWriter sw = File.AppendText(pathFile))
                         {
-                            sw.WriteLine(queueMessage.AsString);
+                            sw.WriteLine("{0}: Name: {1}, Surname: {2}, Birth date: {3}, Address: {4};", DateTime.Now,
+                                        user.name, user.surname, user.birthDate.ToShortDateString(), user.address);
                         }
                     }
                     else 
