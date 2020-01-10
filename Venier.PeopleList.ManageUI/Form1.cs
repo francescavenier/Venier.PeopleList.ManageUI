@@ -15,6 +15,13 @@ namespace Venier.PeopleList.ManageUI
         public Form1()
         {
             InitializeComponent();
+            // Verifica esistenza coda
+
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
