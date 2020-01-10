@@ -8,6 +8,6 @@ namespace Venier.PeopleList.Data
         public string surname { get; set; }
         public DateTime birthDate { get; set; }
         public string address { get; set; }
-        public string appId { get; set; } = "Venier";
+        public string appId { get { return "Venier"; } }
     }
 }
