@@ -43,6 +43,11 @@ namespace Venier.PeopleList.ManageUI
             //Insert message in queue
             CloudQueueMessage queueMessage = new CloudQueueMessage(JsonMessage);
             Queue.AddMessage(queueMessage);
+            txtName.Text = string.Empty;
+            txtSurname.Text = string.Empty;
+            txtBirthDate.Text = string.Empty;
+            txtAddress.Text = string.Empty;
+
         }
     }
 }
