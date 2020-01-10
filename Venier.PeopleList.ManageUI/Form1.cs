@@ -37,6 +37,7 @@ namespace Venier.PeopleList.ManageUI
             user.birthDate = DateTime.Parse(txtBirthDate.Text);
             user.address = txtAddress.Text;
 
+
              //Serialize message
             var JsonMessage = JsonConvert.SerializeObject(user);
 

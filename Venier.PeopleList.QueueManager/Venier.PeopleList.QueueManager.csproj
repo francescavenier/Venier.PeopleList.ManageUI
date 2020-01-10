@@ -62,5 +62,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Venier.PeopleList.Data\Venier.PeopleList.Data.csproj">
+      <Project>{44914E7D-6D8C-4D57-B63C-4B135AD9A3C5}</Project>
+      <Name>Venier.PeopleList.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
