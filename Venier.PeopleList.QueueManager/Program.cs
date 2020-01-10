@@ -3,6 +3,7 @@ using Microsoft.Azure.Storage.Queue;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -17,7 +18,8 @@ namespace Venier.PeopleList.QueueManager
         {
             int wait = 3000;
             People user = new People();
-
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Files\francesca.venier.txt");
+            
             // Connection to Azure
             Auth auth = new Auth();
             var storageAccount = CloudStorageAccount.Parse(auth.connectionString);
@@ -37,6 +39,12 @@ namespace Venier.PeopleList.QueueManager
                         Console.WriteLine("Message:\nName: {0}\nSurname: {1}\nBirth date: {2}\nAddress: {3}",
                                             user.name, user.surname, user.birthDate.ToShortDateString(), user.address);
                         queue.DeleteMessage(queueMessage);
+
+                        // Insert in francesca.venier.txt
+                        using (StreamWriter sw = File.AppendText(path))
+                        {
+                            sw.WriteLine(queueMessage.AsString);
+                        }
                     }
                     else 
                     {
