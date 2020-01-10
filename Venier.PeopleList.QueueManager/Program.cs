@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Venier.PeopleList.Data;
 
@@ -26,7 +27,7 @@ namespace Venier.PeopleList.QueueManager
 
             while (true)
             {
-                var queueMessage = queue.GetMessage();
+                var queueMessage = queue.PeekMessage();
                 if (queueMessage != null)
                 {
                     // Deserialize message
@@ -47,6 +48,7 @@ namespace Venier.PeopleList.QueueManager
                     Console.WriteLine("No message available.");
                     wait = wait + 2000;
                 }
+                Thread.Sleep(wait);
             }
         }
     }

@@ -34,7 +34,7 @@ namespace Venier.PeopleList.ManageUI
             People user = new People();
             user.name = txtName.Text;
             user.surname = txtSurname.Text;
-            user.birthDate = DateTime.Parse(txtBirthDate.Text);
+            user.birthDate = BirthDatePicker.Value;
             user.address = txtAddress.Text;
 
 
@@ -46,7 +46,7 @@ namespace Venier.PeopleList.ManageUI
             Queue.AddMessage(queueMessage);
             txtName.Text = string.Empty;
             txtSurname.Text = string.Empty;
-            txtBirthDate.Text = string.Empty;
+            BirthDatePicker.Value = DateTime.Now;
             txtAddress.Text = string.Empty;
 
         }

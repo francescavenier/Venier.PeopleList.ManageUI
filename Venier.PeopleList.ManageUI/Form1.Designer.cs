@@ -35,10 +35,10 @@
             this.lSurname = new System.Windows.Forms.Label();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.lBirthDate = new System.Windows.Forms.Label();
-            this.txtBirthDate = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.lAddress = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
+            this.BirthDatePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lTitle
@@ -74,7 +74,7 @@
             // 
             this.txtName.Location = new System.Drawing.Point(114, 91);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(166, 22);
+            this.txtName.Size = new System.Drawing.Size(200, 22);
             this.txtName.TabIndex = 3;
             // 
             // lSurname
@@ -90,7 +90,7 @@
             // 
             this.txtSurname.Location = new System.Drawing.Point(114, 124);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(166, 22);
+            this.txtSurname.Size = new System.Drawing.Size(200, 22);
             this.txtSurname.TabIndex = 5;
             // 
             // lBirthDate
@@ -102,18 +102,11 @@
             this.lBirthDate.TabIndex = 6;
             this.lBirthDate.Text = "Birth date";
             // 
-            // txtBirthDate
-            // 
-            this.txtBirthDate.Location = new System.Drawing.Point(114, 159);
-            this.txtBirthDate.Name = "txtBirthDate";
-            this.txtBirthDate.Size = new System.Drawing.Size(166, 22);
-            this.txtBirthDate.TabIndex = 7;
-            // 
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(114, 196);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(166, 22);
+            this.txtAddress.Size = new System.Drawing.Size(200, 22);
             this.txtAddress.TabIndex = 8;
             // 
             // lAddress
@@ -127,7 +120,7 @@
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(204, 247);
+            this.btnSend.Location = new System.Drawing.Point(239, 242);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(75, 31);
             this.btnSend.TabIndex = 10;
@@ -135,15 +128,22 @@
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
+            // BirthDatePicker
+            // 
+            this.BirthDatePicker.Location = new System.Drawing.Point(114, 157);
+            this.BirthDatePicker.Name = "BirthDatePicker";
+            this.BirthDatePicker.Size = new System.Drawing.Size(200, 22);
+            this.BirthDatePicker.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 307);
+            this.ClientSize = new System.Drawing.Size(348, 307);
+            this.Controls.Add(this.BirthDatePicker);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.lAddress);
             this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.txtBirthDate);
             this.Controls.Add(this.lBirthDate);
             this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.lSurname);
@@ -167,10 +167,10 @@
         private System.Windows.Forms.Label lSurname;
         private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Label lBirthDate;
-        private System.Windows.Forms.TextBox txtBirthDate;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label lAddress;
         private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.DateTimePicker BirthDatePicker;
     }
 }
 
