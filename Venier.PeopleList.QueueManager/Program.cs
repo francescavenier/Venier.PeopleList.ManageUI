@@ -27,7 +27,7 @@ namespace Venier.PeopleList.QueueManager
 
             while (true)
             {
-                var queueMessage = queue.PeekMessage();
+                var queueMessage = queue.GetMessage();
                 if (queueMessage != null)
                 {
                     // Deserialize message
