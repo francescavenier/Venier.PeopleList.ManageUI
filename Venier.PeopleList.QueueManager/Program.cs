@@ -19,7 +19,8 @@ namespace Venier.PeopleList.QueueManager
             int wait = 3000;
             People user = new People();
             string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Files");
-            string pathFile = Path.Combine(path, "francesca.venier.txt");
+            string pathFile = "";
+            string username = "";
             
             // Connection to Azure
             Auth auth = new Auth();
@@ -39,6 +40,9 @@ namespace Venier.PeopleList.QueueManager
                     {
                         Console.WriteLine("Message:\nName: {0}\nSurname: {1}\nBirth date: {2}\nAddress: {3}",
                                             user.name, user.surname, user.birthDate.ToShortDateString(), user.address);
+                        username = user.name.ToLower() + "." + user.surname.ToLower();
+
+                        // Delete Message
                         queue.DeleteMessage(queueMessage);
 
                         // Verify directory
@@ -46,12 +50,12 @@ namespace Venier.PeopleList.QueueManager
                         {
                             Directory.CreateDirectory(path);
                         }
-
+                        pathFile = Path.Combine(path, username + ".txt");
                         // Insert in francesca.venier.txt
                         if (!File.Exists(pathFile))
                         {
                             // Create a file to write to.
-                            using (StreamWriter sw = File.AppendText(pathFile))
+                            using (StreamWriter sw = File.CreateText(pathFile))
                             {
                                 sw.WriteLine("{0}: Name: {1}, Surname: {2}, Birth date: {3}, Address: {4};", DateTime.Now,
                                             user.name, user.surname, user.birthDate.ToShortDateString(), user.address);
